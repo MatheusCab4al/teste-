@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Fim google fonts -->
+    <link rel="stylesheet" href="style.css">
+    <title>Portifolio Alura</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/teste3.jpg" alt="">
+                </a>
+            </div>
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#topo-do-site">Início</a></li>
+                    <li><a href="#especialidades">Habilidades</a></li>
+                    <li><a href="#portifolio">Projetos</a></li>
+                </ul>
+            </nav>
+            <div class="btn-contato">
+                <a href="#">
+                    <button>Contato</button>
+                </a>
+            </div>
+            <div class="menu-mobile">
+                <div class="btn-fechar">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="topo-do-site" id="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>CONSTRUINDO O AMANHÃ, LINHA POR LINHA<span>.</span></h1>
+                        <p>Bem-vindo ao meu portfólio! Sou um desenvolvedor iniciante apaixonado e explorando o mundo da programação com determinação. Meu portfólio reflete minha jornada de crescimento e busca por excelência no desenvolvimento de software.</p>
+                        <div class="btn-contato">
+                            <a href="#">
+                                <button>Entre em Contato</button>
+                            </a>
+                        </div>
+                    </div> <!-- txt topo site -->
+                    <div class="img-topo-site">
+                        <img src="images/500x500.png" alt="">
+                    </div> <!-- img topo site -->
+                </div> <!-- flex -->
+            </div> <!-- Interface -->
+        </section> <!-- Topo do Site -->
+        
+        <section class="especialidades" id="especialidades">
+            <div class="interface">
+                <h2 class="titulo">Minhas <span>Habilidades.</span></h2>
+                <div class="flex">
+                    <div class="especilidades-box">
+                        <h3>Python</h3>
+                        <p>Desenvolvedor Python iniciante com sólidos conhecimentos em manipulação de dados, estruturas de controle e orientação a objetos.</p>
+                    </div><!-- Especialidades Box -->
+                    <div class="especilidades-box">
+                        <h3>Front-End</h3>
+                        <p>Em constante evolução nos conhecimentos de desenvolvimento web, incluindo HTML, CSS e JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Especialidades -->
+        
+        <section class="portifolio" id="portifolio"><!-- Portifolio -->
+            <div class="interface">
+                <h2 class="titulo">Meus <span>Projetos.</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image:url(images/calculadora.jpg);">
+                        <div class="overlay">Calculadora em Python</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/formulariomenor.jpg); background-size: cover; background-position:center;height: 300px;">
+                        <div class="overlay">Formulário de Inscrição</div>
+                    </div>
+                    <div class="img-port" style="background-image:url(images/Design\ sem\ nome\ \(2\).png); background-size: contain;background-position: center;height: 320px;position:relative;text-align: center;">
+                        <div class="overlay">Cadastro de Produtos em Python</div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Portifolio -->
+        
+        <section class="formulario"><!-- formulario -->
+            <div class="interface">
+                <h2 class="titulo">Fale <span>Comigo.</span></h2>
+                <form action="">
+                    <input type="text" name="" id="" placeholder="Seu nome" required>
+                    <input type="text" name="" id="" placeholder="Seu email" required>
+                    <input type="text" name="" id="" placeholder="Seu whatsapp" required>
+                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="Enviar"></div>
+                </form>
+            </div>
+        </section> <!-- formulario -->
+    </main>
+    
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="logo-footer">
+                    <img src="images/Logo_Alura_Include_(1).png" alt="Logo Alura">
+                </div>
+                <div class="btn-social">
+                    <a href="https://www.instagram.com/math3us___sant0s/" target="_blank">
+                        <img src="images/instagram.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/matheus-cabral-b062b3290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">
+                        <img src="images/linkedin.svg" alt="LinkedIn" class="social-icon">
+                    </a>
+                </div>
+            </div> <!-- line-footer -->
+        </div><!-- interface -->
+    </footer>
+
+
+    <script>
+        // Adicionando comportamento de rolagem suave para os links do menu
+        const linksMenu = document.querySelectorAll('nav.menu.desktop ul li a');
+        linksMenu.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
